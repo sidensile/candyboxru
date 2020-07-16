@@ -10,67 +10,67 @@ var swamp = {
         var answer_form = "\n\n<input id=\"answer\" type=\"text\" onchange=\"swamp.answer()\" /> <span id=\"swamp_comment\"></span>";
         switch(this.step){
             case 4:
-                text = speech.makeSpeechFromText("Hello. I'm The Frog. I can provide you candies, and lots of things. I know how much you love candies. But I feel alone in this swamp. I'd like to play with you before. If you answer my questions correctly, the sweetest sweets will be yours.", 29, "");
+                text = speech.makeSpeechFromText("Здарова, я мистер Лягушка. Я могу тебе дать конфеты, и много других полезных вещей. Я знаю, что ты любишь сладости. Но мне одиноко на болоте. И потому я сыграю с тобой в игру. Если ты ответишь на мои вопросы верно, то вкуснейшие сладости будут твоими!", 29, "");
                 text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(5);\">Let's go, then</button>";
             break;
             case 5:
-                text = speech.makeSpeechFromText("First question : do you _really_ love candies?", 29, "");
+                text = speech.makeSpeechFromText("Первый вопрос : ТЫ действительно любишь конфеты?", 29, "");
                 text += answer_form;
             break;
             case 6:
-                text = speech.makeSpeechFromText("Perfect. Here's 10 candies. Many more candies are waiting for you.", 29, "");
-                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(7);\">Second question!</button>";
+                text = speech.makeSpeechFromText("Идеально. Держи 10 конфеток. Гораздо больше конфет ждёт тебя!.", 29, "");
+                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(7);\">Второй вопрос!</button>";
             break;
             case 7:
-                text = speech.makeSpeechFromText("Second question : if A implies B and B implies C, and D implies A, and E implies D, what does A imply?", 29, "");
+                text = speech.makeSpeechFromText("Second question : if A равно B и B равно C, и D равно A, и E равно D, чему равняется A?", 29, "");
                 text += answer_form;
             break;
             case 8:
-                text = speech.makeSpeechFromText("Great. You seem to understand basic logic. Here's 100 candies.", 29, "");
-                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(9);\">Next question!</button>";
+                text = speech.makeSpeechFromText("Великолепно. Ты понимаешь базовую логику. Забирай 100 конфет.", 29, "");
+                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(9);\">Следующий!</button>";
             break;
             case 9:
-                text = speech.makeSpeechFromText("Third question. Consider 10 days. If I give you 1 candy on the first day, and each other day I give you twice more candies than the previous one, how much candies will I give you on the day number 10?", 29, "");
+                text = speech.makeSpeechFromText("Третий вопрос. Представь себе 10 дней. Если я дам тебе 1 конфету в первый день, и каждый следующий буду давать в 2 раза больше нежели в предыдущий, сколько конфет я дам тебе на 10-ый, последний, день", 29, "");
                 text += answer_form;
             break;
             case 10:
-                text = speech.makeSpeechFromText("Exactly. Let's speed up the process : here's your 512 candies right now! Playing with you is so exciting! Next question is for 1000 candies.", 29, "");
-                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(11);\">Candiiiiies!</button>";
+                text = speech.makeSpeechFromText("Точно. Давай ускорим процесс : вот тебе 512 конфет прямо сейчас! Играть с тобой так интересно! Следующий вопрос будет на 1000 конфет, готов?", 29, "");
+                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(11);\">Конфетыыыыыыы!</button>";
             break;
             case 11:
-                text = speech.makeSpeechFromText("Fourth question : if you could be whatever you want, what would you be?", 29, "");
+                text = speech.makeSpeechFromText("Четвёртый вопрос : Если бы ты мог быть кем угодно, то кем бы ты стал?", 29, "");
                 text += answer_form;
             break;
             case 12:
-                text = speech.makeSpeechFromText("Correct! Everyone wants to be a frog. Here's your 1000 candies.", 29, "");
-                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(13);\">Any more enigma?</button>";
+                text = speech.makeSpeechFromText("Правильно! Кто же не хочет быть лягушкой. Держи свои 1000 конфет.", 29, "");
+                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(13);\">Еще одна загадка?</button>";
             break;
             case 13:
-                text = speech.makeSpeechFromText("Here's a story : there's a fox, a lion and a wolf inside a lunar crater. The fox is about to bite the lion, which is about to bite the wolf, which is about to bite the fox. It's snowing and a shrub is watching the scene. Who's enjoying the story?", 29, "");
+                text = speech.makeSpeechFromText("Вот история : Однажды, лиса, лев и волк оказались в краторе луны. Лиса укусила льва, лев укусил волка, а волк укусил лису. Был снегопад и Игорь увидел это по телеку . Кому понравилась эта история ?", 29, "");
                 text += answer_form;
             break;
             case 14:
-                text = speech.makeSpeechFromText("Right, you were enjoying it! At least, I hope so. Here's a chocolate bar for you. It's very precious.", 29, "");
-                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(15);\">Thanks, Frog!</button>";
+                text = speech.makeSpeechFromText("Именно, ты наслажем! Во всяком случае я надеюсь ;). Вот шоколадка для тебя. Она очень вкусная!", 29, "");
+                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(15);\">Спасибо, мистер Лягушка!</button>";
             break;
             case 15:
-                text = speech.makeSpeechFromText("Now, just type the answer to that question and I'll give you a very special present : what is the only thing to go beyond the limits of our universe ?", 29, "");
+                text = speech.makeSpeechFromText("Теперь напиши ответ и я дам тебе специальный подарок. Какая вещь принадлежит только одному человеку во вселенной ?", 29, "");
                 text += answer_form;
             break;
             case 16:
-                text = speech.makeSpeechFromText("Yes it is ! Now, here's 5 very special potions. They'll be very useful during quests.", 29, "");
+                text = speech.makeSpeechFromText("Невероятно ! Теперь держи 5 крутых зелий. Они будут очень полезны, пока проходишь квест.", 29, "");
                 text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(17);\">Yay !!</button>";
             break;
             default:
-                text = speech.makeSpeechFromText("I have no more sweets to give you. It was a real pleasure to play with you. Thanks a lot.", 29, "");
+                text = speech.makeSpeechFromText("У меня больше нету сладостей. Но было очень классно поиграть с тобой. Спасибо большое.", 29, "");
             break;
         }
         
-        text += "\n\n<button onClick=\"swamp.leave();\">Leave the Swampy Swamp</button>";
+        text += "\n\n<button onClick=\"swamp.leave();\">Уйти с Мутного Болота</button>";
         
         htmlInteraction.setInnerHtml("map", "\
            .--._.--.\n\
-      The ( O     O ) Frog\n\
+   Мистер ( O     O ) Лягушка\n\
           /   . .   \\\n\
          .`._______.'.\n\
         /(           )\\\n\
@@ -98,9 +98,9 @@ following your map...\
             break;
             case 1:
                 htmlInteraction.setInnerHtml("map", "\
-On the horizon, you see a\n\
-              00        frog\n\
-             (--)         coming...\n\
+На горизонте вы видите что какая-то\n\
+              00        лягушка\n\
+             (--)         подходит к вам...\n\
             ( || )\n\
             ^^~~^^\
 ");
@@ -109,10 +109,10 @@ On the horizon, you see a\n\
             break;
             case 2:
                 htmlInteraction.setInnerHtml("map", "\
-It is coming_    _\n\
-  slowly   (o)--(o)\n\
-   but    /.______.\\\n\
-  surely, \\________/\n\
+Она идёт    _    _\n\
+медленно   (o)--(o)\n\
+   но     /.______.\\\n\
+уверенно, \________/\n\
          ./        \\.\n\
         ( .        , )\n\
          \\ \\_\\\\//_/ /\n\
@@ -125,8 +125,8 @@ It is coming_    _\n\
                 htmlInteraction.setInnerHtml("map", "\
            .-.   .-.\n\
           ( o )_( o )\n\
-      __ / '-'   '-' \\ __ it is\n\
-     /  /      \"      \\  \\    green.\n\
+      __ / '-'   '-' \\ __ и она\n\
+     /  /      \"      \\  \\    зелёная.\n\
     |   \\    _____,   /   |\n\
      \\  \\`-._______.-'/  /\n\
  _.-`   /\\)         (/\\   `-._\n\
@@ -190,46 +190,46 @@ It is coming_    _\n\
         
         switch(this.step){
             case 5:
-                if(ans == "yes"){
+                if(ans == "да"){
                     candies.setNbrOwned(candies.nbrOwned + 10);
                     this.setStep(6);
                 }
-                else this.setComment("Wrong.");
+                else this.setComment("Неверно.");
             break;
             case 7:
                 if(ans == "c" || ans == "b" || ans == "candb" || ans == "bandc"){
                     candies.setNbrOwned(candies.nbrOwned + 100);
                     this.setStep(8);
                 }
-                else this.setComment("Wrong.");
+                else this.setComment("Враньё.");
             break;
             case 9:
                 if(ans == "512"){
                     candies.setNbrOwned(candies.nbrOwned + 512);
                     this.setStep(10);
                 }
-                else this.setComment("Wrong.");
+                else this.setComment("Ошибочка.");
             break;
             case 11:
-                if(ans == "frog" || ans == "afrog" || ans == "thefrog"){
+                if(ans == "лягушка" || ans == "ты"){
                     candies.setNbrOwned(candies.nbrOwned + 1000);
                     this.setStep(12);
                 }
-                else this.setComment("Wrong.");
+                else this.setComment("Не-а.");
             break;
             case 13:
-                if(ans == "me"){
+                if(ans == "мне"){
                     chocolateBars.setNbrOwned(chocolateBars.nbrOwned + 1);
                     this.setStep(14);
                 }
-                else this.setComment("Wrong.");
+                else this.setComment("Ты серьёзно?");
             break;
             case 15:
-                if(ans == "theanswertothatquestion" || ans == "theanswer" || ans == "answer" || ans == "answertothatquestion"){
+                if(ans == "ответ"){
                     potions.getPotions(potions.list.berserk, 5);
                     this.setStep(16);
                 }
-                else this.setComment("Wrong.");
+                else this.setComment("Не правда.");
             break;
         }
     }

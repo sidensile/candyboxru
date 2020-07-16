@@ -17,7 +17,7 @@ var sea = {
         var index = quest.getCharacterIndex();
         
         // Create the text
-        var text = "                                 \"The sea\"\n\n\n";
+        var text = "                                 \"Море\"\n\n\n";
         
         for(var i = 0; i < index; i++){
             text += "   ";
