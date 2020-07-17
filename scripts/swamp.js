@@ -186,7 +186,7 @@ following your map...\
     
     answer : function(){
         var ans = htmlInteraction.getElement("answer").value.toLowerCase().replace(/[^\w]|_/g, "");
-        // htmlInteraction.getElement("answer").focus(); // Re focus after answering
+        htmlInteraction.getElement("answer").focus(); // Re focus after answering
         
         switch(this.step){
             case 5:
