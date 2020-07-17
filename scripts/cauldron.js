@@ -315,23 +315,23 @@ var cauldron = {
     },
     
     drawActionsPut : function(){
-        this.textActionsPut = "<b>What you want to put in the cauldron :</b><br/><br/>"
-        this.textActionsPut += "<input id=\"cauldron_candies_quantity\" type=\"text\" size=\"10\"/> candies<br/>";
-        this.textActionsPut += "<input id=\"cauldron_lollipops_quantity\" type=\"text\" size=\"10\"/> lollipops<br/>";
+        this.textActionsPut = "<b>Что вы хотите положить в котел :</b><br/><br/>"
+        this.textActionsPut += "<input id=\"cauldron_candies_quantity\" type=\"text\" size=\"10\"/> конфеты <br/>";
+        this.textActionsPut += "<input id=\"cauldron_lollipops_quantity\" type=\"text\" size=\"10\"/> леденцы <br/>";
         this.textActionsPut += "<button onclick=\"cauldron.putInTheCauldron()\">Put all that in the cauldron</button> <span id=\"cauldron_comment\"></span><br/>";
     },
     
     drawActionsInCauldron : function(){
-        this.textActionsInCauldron += "<b>What is in the cauldron :</b><br/>";
-        this.textActionsInCauldron += "    Candies :   " + this.candiesInTheCauldron;
-        this.textActionsInCauldron += "<br/>    Lollipops : " + this.lollipopsInTheCauldron + "<br/>";
+        this.textActionsInCauldron += "<b>Что уже в котле :</b><br/>";
+        this.textActionsInCauldron += "    Конфеты :   " + this.candiesInTheCauldron;
+        this.textActionsInCauldron += "<br/>    Леденцы : " + this.lollipopsInTheCauldron + "<br/>";
     },
     
     drawActions : function(){
-        this.textActions += "<b>What you can do with it :</b><br/>";
-        this.textActions += "<button id=\"cauldron_mix\" onclick=\"cauldron.setWeAreMixing(true)\">Mix</button><button id=\"cauldron_boil\" onclick=\"cauldron.setWeAreBoiling(true)\">Boil</button><button disabled=\"disabled\" id=\"cauldron_stop\" onclick=\"cauldron.stopActions()\">Stop</button><br/><br/>";
+        this.textActions += "<b>Что вы можете сделать :</b><br/>";
+        this.textActions += "<button id=\"cauldron_mix\" onclick=\"cauldron.setWeAreMixing(true)\">Смешать</button><button id=\"cauldron_boil\" onclick=\"cauldron.setWeAreBoiling(true)\">Boil</button><button disabled=\"disabled\" id=\"cauldron_stop\" onclick=\"cauldron.stopActions()\">Stop</button><br/><br/>";
         this.textActions += "<span id=\"cauldron_action_text\"></span>";
-        this.textActions += "<button id=\"cauldron_put_into_bottles\" onclick=\"cauldron.putIntoBottles()\">Put everything into bottles</button><br/><br/>";
+        this.textActions += "<button id=\"cauldron_put_into_bottles\" onclick=\"cauldron.putIntoBottles()\">Убрать в банку</button><br/><br/>";
         this.textActions += "<span id=\"cauldron_results_text\"></span>";
     },
     
@@ -354,31 +354,31 @@ var cauldron = {
                 // Else
                 else{
                     // We show a special message
-                    htmlInteraction.setInnerHtml("cauldron_timer", this.actionTimer + " ... You do realize that you're not mixing anything, right ?");
+                    htmlInteraction.setInnerHtml("cauldron_timer", this.actionTimer + " ... Вы ведь понимаете, что ничего не смешиваете, верно ?");
                 }
             }
             else
-                htmlInteraction.setInnerHtml("cauldron_timer", "too much mixing, your arms are hurting.");
+                htmlInteraction.setInnerHtml("cauldron_timer", "так много смешиваете, ваши руки отваливаются!");
         }
         else if(this.weAreBoiling){
             if(this.actionTimer < 3)
-                htmlInteraction.setInnerHtml("cauldron_timer", "cold.");
+                htmlInteraction.setInnerHtml("cauldron_timer", "холодрыга.");
             else if(this.actionTimer < 6)
-                htmlInteraction.setInnerHtml("cauldron_timer", "lukewarm.");
+                htmlInteraction.setInnerHtml("cauldron_timer", "Приятно тепло.");
             else if(this.actionTimer < 9)
-                htmlInteraction.setInnerHtml("cauldron_timer", "hot..");
+                htmlInteraction.setInnerHtml("cauldron_timer", "горячо..");
             else if(this.actionTimer < 11)
-                htmlInteraction.setInnerHtml("cauldron_timer", "very hot...");
+                htmlInteraction.setInnerHtml("cauldron_timer", "очень горячо...");
             else if(this.actionTimer < 13)
-                htmlInteraction.setInnerHtml("cauldron_timer", "very very hot !");
+                htmlInteraction.setInnerHtml("cauldron_timer", "ГОРЯЧО ПЗДЦ !");
             else if(this.actionTimer < 14)
-                htmlInteraction.setInnerHtml("cauldron_timer", "bubbles begin to appear...");
+                htmlInteraction.setInnerHtml("cauldron_timer", "начинают появляться пузырьки...");
             else if(this.actionTimer < 15)
-                htmlInteraction.setInnerHtml("cauldron_timer", "bubbles begin to appear... and..");
+                htmlInteraction.setInnerHtml("cauldron_timer", "начинают появляться пузырьки... и..");
             else if(this.actionTimer < 32)
-                htmlInteraction.setInnerHtml("cauldron_timer", "BOILING !");
+                htmlInteraction.setInnerHtml("cauldron_timer", "Кипение !");
             else
-                htmlInteraction.setInnerHtml("cauldron_timer", "the water is burnt ! How is that even possible ?");
+                htmlInteraction.setInnerHtml("cauldron_timer", "Вода сгорела ! Как это вообще понимать ?");
         }
     },
     
@@ -396,7 +396,7 @@ var cauldron = {
             this.weAreMixing = true;
             this.disableActionsButtons();
             // We set the text
-            htmlInteraction.setInnerHtml("cauldron_action_text", "Mixing... <span id=\"cauldron_timer\"></span><br/><br/>");
+            htmlInteraction.setInnerHtml("cauldron_action_text", "Смешиваем... <span id=\"cauldron_timer\"></span><br/><br/>");
             // We set the timer
             this.setActionTimer(0);
             // We store some info
@@ -419,7 +419,7 @@ var cauldron = {
             this.weAreBoiling = true;
             this.disableActionsButtons();
             // We set the text
-            htmlInteraction.setInnerHtml("cauldron_action_text", "Boiling... <span id=\"cauldron_timer\"></span><br/><br/>");
+            htmlInteraction.setInnerHtml("cauldron_action_text", "Кипение... <span id=\"cauldron_timer\"></span><br/><br/>");
             // We set the timer
             this.setActionTimer(0);
             // We store some info
@@ -568,25 +568,25 @@ var cauldron = {
             for(var i = 0; i < resultsList.length; i++){
                 if(resultsList[i].special != true){
                     if(resultsList[i].nbr > 1){
-                        resultsText += "You made " + resultsList[i].nbr + " " + resultsList[i].type + " potions !<br/>";
+                        resultsText += "У вас получились " + resultsList[i].nbr + " " + resultsList[i].type + " зелья !<br/>";
                     }
                     else{
-                        resultsText += "You made a " + resultsList[i].type + " potion.<br/>";
+                        resultsText += "Вы приготовили " + resultsList[i].type + " зелье.<br/>";
                     }
                 }
                 else{
                     if(resultsList[i].nbr > 1){
-                        resultsText += "You made " + resultsList[i].nbr + " " + resultsList[i].plural + " !<br/>";
+                        resultsText += "Вам надо идти на кулинарное шоу! Вы сварили " + resultsList[i].nbr + " " + resultsList[i].plural + " !<br/>";
                     }
                     else{
-                        resultsText += "You made a " + resultsList[i].type + ".<br/>";
+                        resultsText += "Вы приготовили " + resultsList[i].type + ".<br/>";
                     }
                 }
             }
             htmlInteraction.setInnerHtml("cauldron_results_text", resultsText);
         }
         else{
-            htmlInteraction.setInnerHtml("cauldron_results_text", "You don't manage to get anything interesting with that preparation.<br/>Did you follow the manual's instructions ?");
+            htmlInteraction.setInnerHtml("cauldron_results_text", "С такой подготовкой ничего интересного не получится.<br/>Вы вообще читали инструкции? ?");
         }
         
         // We empty the cauldron
@@ -655,24 +655,24 @@ var cauldron = {
         if(isNaN(candiesQuantity) || isNaN(lollipopsQuantity)){
             // If both values are incorrect
             if(isNaN(candiesQuantity) && isNaN(lollipopsQuantity)){
-                htmlInteraction.setInnerHtml("cauldron_comment", "The values you entered are not numbers.");
+                htmlInteraction.setInnerHtml("cauldron_comment", "Введите число. Самый умный нашёлся, блин!");
             }
             // If only the candies value is incorrect
             else if(isNaN(candiesQuantity)){
-                htmlInteraction.setInnerHtml("cauldron_comment", "The value you entered for candies is not a number.");
+                htmlInteraction.setInnerHtml("cauldron_comment", "Ты серьёзно думаешь что конфеты измеряются буквами? Нет они измеряются в числах.");
             }
             // Else, only the lollipops value is incorrect
             else{
-                htmlInteraction.setInnerHtml("cauldron_comment", "The value you entered for lollipops is not a number.");
+                htmlInteraction.setInnerHtml("cauldron_comment", "У вас нет такого колличества леденцов. А вообще надо числом писать.");
             }
         }
         // Else, if we don't have enough candies or lollipops to put all that in the cauldron
         else if(candiesQuantity > candies.nbrOwned || lollipopsQuantity > lollipops.nbrOwned){
-            htmlInteraction.setInnerHtml("cauldron_comment", "You don't have enough to put all that in the cauldron !");
+            htmlInteraction.setInnerHtml("cauldron_comment", "У вас не так много ресурсов !");
         }
         // Else, if one if the value is negative
         else if(candiesQuantity < 0 || lollipopsQuantity < 0){
-            htmlInteraction.setInnerHtml("cauldron_comment", "Don't put negative values !");
+            htmlInteraction.setInnerHtml("cauldron_comment", "Не пиши отрицательные значения. Котёл тебе не восполнит твои запасы !");
         }
         // Else, we put all that in the cauldron !
         else{
@@ -738,9 +738,9 @@ var cauldron = {
     // Ascii
     asciiCauldron : 
 [
-"       ___________",
-"      (___________)",
-"       /         \\",
+"       ___________  ко",
+"      (___________)   те",
+"       /         \\  лок",
 "      /           \\",
 "     |             |",
 " ____\\             /____",
@@ -769,14 +769,27 @@ var cauldron = {
 "  `---------------------~___~--------------------\'\'"
 ],
 
+    asciiZeroPage :
+[
+"Перевёл",
+"Иван Курбаков",
+"Я старался",
+"подпишись !",
+" на вк ",
+"@vanekphoto",
+"",
+" id:452690583 ",
+"",
+""
+],
     asciiFirstPage :
 [
-"Welcome to the",
-"potions brewing",
-"manual for",
-"beginners !",
 "",
-" (second edition)",
+"Зельеварение",
+"Иструкция для",
+"новичков !",
+"",
+"(второе издание)",
 "",
 " __  __  __  __ ",
 " )(  )(  )(  )( ",
@@ -786,102 +799,101 @@ var cauldron = {
     asciiSecondPage :
 [
 "",
-"The present",
-"manual will focus",
-"on potions that",
-"require materials",
-"such as : ",
-" - candies",
-" - lollipops",
+"Настоящее руко-",
+"водство сосредота-",
+"чивается на зельях",
+"из таких материалов",
+"как : ",
+" - конфеты",
+" - леденцы",
 ],
 
     asciiThirdPage :
 [
-" The three rules",
-"of potion brewing",
+" Три правила",
+"зельеварения",
 "-----------------",
 "",
-"1. The effect of",
-"a potion depends",
-"on its content as",
-"well as on the",
-"steps followed to",
-"prepare it."
+"1. Эффект зелья",
+"зависит",
+"от ингредиентов",
+"а так же в каком",
+"порядке вы ",
+"приготовили их."
 ],
 
     asciiFourthPage :
 [
-"2. You can do",
-"several potions",
-"in one go.",
+"2.Вы можете сделать",
+"несколько зелий",
+"за один раз.",
 "",
-"3. It's possible",
-"to mix",
-"instructions to",
-"brew potions of",
-"different types",
-"in one go."
+"3. Возможно",
+"смешивать",
+"разные инструкции",
+"и варить зелья",
+"разных видов",
+"за один раз."
 ],
 
     asciiFifthPage :
 [
-"Table of contents",
+"Стол материалов",
 "-----------------",
-" Pages 10 to 20",
-" (Good potions)",
+" Страницы 10-20",
+" (Хорошие зелья)",
 "-----------------",
 "",
 " 10-13",
-"Minor health",
-"potion"
+"Зелье здоровья"
 ],
 
     asciiSixthPage :
 [
 "",
 " 14-17",
-"Major health",
-"potion",
+"Двойное зелье",
+"здоровья",
 "",
 " 18-20",
-"Invulnerability",
-"potion"
+"Зелье",
+"Неуязвимости"
 ],
 
     asciiSeventhPage :
 [
-"Table of contents",
+"Стол материалов",
 "-----------------",
-" Pages 22 to 41",
-"(Strange potions)",
+" Страницы 22 - 41",
+"(Сильные зелья)",
 "-----------------",
 "",
 " 22-27",
-"Turtle potion"
+"Черепашье зелье"
 ],
 
     asciiEighthPage :
 [
 " 28-33",
-"Cloning potion",
+"Клонирующее зелье",
 "",
 " 34-37",
-"G.M.O.O.H.",
-"potion",
+"У.М.О.С.",
+"зелье",
 "",
 " 38-41",
-"Superman potion",
+"Зелье супермена",
 ],
 
     asciiNinthPage :
 [
-"Table of contents",
+"Стол материалов",
 "-----------------",
-" Pages 42 to 50",
-"(Various magical",
-"objects you can",
-"  brew in your",
-"   cauldron)",
+" Страницы 42 - 50",
+"(Различные магические",
+"объекты, которые ты",
+"  можешь получить",
+"   после смешивания)",
 "-----------------"
 ],
 
@@ -890,25 +902,25 @@ var cauldron = {
 "",
 "",
 " 42-45",
-"Magical seed",
+"Магическое семя",
 "",
 "",
 " 46-50",
-"Magical jelly",
+"Желе Генадий",
 ],
 
     asciiMinorHealthPotionP1 :
 [
-"Minor health pot.",
+"Зелье здоровья.",
 "-----------------",
-"The minor health",
-"potion is the",
-"easiest to brew",
-"for beginners.",
+"Зелье здоровья",
+"Самое простое",
+"в приготовлении",
+"для новичков",
 "",
-"Used during a",
-"quest, it will",
-"make you recover"
+"При использовании",
+"во время задания",
+"поможет восстановиться"
 ],
 
     asciiMinorHealthPotionP2 :

@@ -32,16 +32,16 @@ var forge = {
         switch(this.step){
             case 0:
                 if(sword.name == "chocolate sword"){
-                    text += "<button onClick=\"sword.sharpen();\">Sharpen your sword using the anvil</button>\n";
+                    text += "<button onClick=\"sword.sharpen();\">Наточи свой меч с помощью наковальни</button>\n";
                 }
             break;
             case 1:
                 if(potions.list.health.shown)
-                    text += "<button id=\"enchant_health\" onClick=\"sword.enchantHealth();\">Enchant using a health potion</button>\n";
+                    text += "<button id=\"enchant_health\" onClick=\"sword.enchantHealth();\">Зачаровать с помощью зелья здоровья</button>\n";
                 if(potions.list.fireScroll.shown)
-                    text += "<button id=\"enchant_fire\" onClick=\"sword.enchantFire();\">Enchant using a fire scroll</button>\n";
+                    text += "<button id=\"enchant_fire\" onClick=\"sword.enchantFire();\">Зачаровать с помощью пламенного свитка</button>\n";
                 if(potions.list.impInvocationScroll.shown)
-                    text += "<button id=\"enchant_imp_invocation\" onClick=\"sword.enchantImpInvocation();\">Enchant using an imp invocation scroll</button>\n";
+                    text += "<button id=\"enchant_imp_invocation\" onClick=\"sword.enchantImpInvocation();\">Зачаровать с помощью imp invocation scroll</button>\n";
             break;
         }
         

@@ -398,8 +398,8 @@ var quest = {
     },
     
     defineMood : function(){
-        if(this.tiredTime == 0) htmlInteraction.setInnerHtml("mood", "You're in the pink! Ready for fighting!");
-        else htmlInteraction.setInnerHtml("mood", "You're tired. You have to wait before doing another quest. Waiting time : " + this.tiredTime);
+        if(this.tiredTime == 0) htmlInteraction.setInnerHtml("mood", "Ты что медлишь, чувак!? Скорее в бой!");
+        else htmlInteraction.setInnerHtml("mood", "Ты устал? Не тормози, сникерсни!А если сникерсов рядом нет, то просто имей терпение и подожди. Сколько надо подождать : " + this.tiredTime);
         htmlInteraction.setElementVisibility("mood", true);
     },
     

@@ -29,7 +29,7 @@ var farm = {
         // Update on page
         switch(this.plantingButtonsStep){
             case 1:
-                htmlInteraction.setInnerHtml("lp_buttons", "<button class=\"home_button\" id=\"plant_1_lp\" onClick=\"farm.plantLollipops(1);\">Plant 1 lollipop</button>");
+                htmlInteraction.setInnerHtml("lp_buttons", "<button class=\"home_button\" id=\"plant_1_lp\" onClick=\"farm.plantLollipops(1);\">Посадить 1 леденец</button>");
             break;
             case 2:
                 htmlInteraction.setInnerHtml("lp_buttons", "Plant <button class=\"home_button\" id=\"plant_1_lp\" onClick=\"farm.plantLollipops(1);\">1</button><button class=\"home_button\" id=\"plant_10_lp\" onClick=\"farm.plantLollipops(10);\" style=\"visibility:hidden\">10</button> lp");
@@ -78,7 +78,7 @@ var farm = {
         this.lollipopsPlanted = value;
         
         // We update on page
-        htmlInteraction.setInnerHtml("lp_planted", "Lp planted : " + this.lollipopsPlanted);
+        htmlInteraction.setInnerHtml("lp_planted", "Lp выращено : " + this.lollipopsPlanted);
         
         // We re calculate stuff
         this.calculateLollipopsPerDay();
@@ -87,19 +87,19 @@ var farm = {
     
     calculateLollipopsProductionFromLollipopsPerDay : function(){
         if(this.lollipopsPerDay < 24){
-            this.setProductionDelayType("day");
+            this.setProductionDelayType("в день");
             this.setLollipopsProduction(Math.floor(this.lollipopsPerDay));
         }
         else if(this.lollipopsPerDay < 1440){
-            this.setProductionDelayType("hour");
+            this.setProductionDelayType("в час");
             this.setLollipopsProduction(Math.floor(this.lollipopsPerDay/24));
         }
         else if(this.lollipopsPerDay < 86400){
-            this.setProductionDelayType("min");
+            this.setProductionDelayType("в минуту");
             this.setLollipopsProduction(Math.floor(this.lollipopsPerDay/1440));
         }
         else{
-            this.setProductionDelayType("sec");
+            this.setProductionDelayType("в секунду");
             this.setLollipopsProduction(Math.floor(this.lollipopsPerDay/86400));
         }
     },
@@ -110,7 +110,7 @@ var farm = {
     
     setLollipopsProduction : function(value){
         this.lollipopsProduction = value;
-        htmlInteraction.setInnerHtml("lp_production", "Production : " + this.lollipopsProduction + " lp/" + this.productionDelayType);
+        htmlInteraction.setInnerHtml("lp_production", "Продукция : " + this.lollipopsProduction + " lp/" + this.productionDelayType);
     },
     
     setMaxLollipopsPerDay : function(value){

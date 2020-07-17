@@ -21,7 +21,7 @@ var potions = {
         this.addPotion("majorHealth", "Двойное зелье здоровья", "#ff0000", "potions.heal(100);", "Это зелье имеет двойной эффект восстановления здоровья", "potion");
         this.addPotion("invulnerability", "Invulnerability potion", "#ef893b", "potions.invulnerability();", "This invulnerability potion will make you invincible for some time, but it fills your stomach : you won't be able to drink another potion for a long time after using it.", "potion");
         this.addPotion("turtle", "Черепашье зелье", "#008a13", "potions.turtle();", "После использования вы станете черепахой (но не ниндзя). Недостаток: вы идете медленнее. Преимущество: теперь вы гораздо более устойчивы к атакам ваших врагов.", "potion");
-        this.addPotion("jelly", "Желе", "#9500b5", "potions.jelly();", "Это искусно приготовленное желе взрывается при соприкосновении с чем-либо, пытающимся пройти сквозь него, нанося высокий урон. При использовании, ставится сзади вас.", "special");
+        this.addPotion("jelly", "Желе Генадий", "#9500b5", "potions.jelly();", "Желе Гена взрывается при соприкосновении с чем-либо, пытающимся пройти сквозь него, нанося высокий урон. При использовании, ставится сзади вас.", "special");
         this.addPotion("seed", "Семя", "#3dab3a", "potions.seed();", "Это семя способно заставить вырасти конфетное дерево. Конфетное дерево сделано из конфет, и требуется много времени, чтобы срубить его. П. С.: посадится только если для него достаточно места.", "special");
         this.addPotion("cloning", "Зелье клонирования", "#6d6d6d", "potions.cloning();", "Это зелье клонирования будет, хорошо... клонировать тебя. Странно, не так-ли? Ваш клон будет иметь те же очки здоровья, что и вы, когда вы выпили зелье, но у него не будет ни вашей брони, ни вашего меча. Он будет сражаться, используя \"клонированный меч\", который наносит правильное количество урона. Клон будет помещен перед вами, если там достаточно места.", "potion");
         this.addPotion("superman", "Зелье супермена", "#ddef17", "potions.superman();", "Это зелье супермэна даст вам плащ и сделает вас похожим на Супермена до конца задания !", "potion");
@@ -41,13 +41,13 @@ var potions = {
         var text = "";
         
         // Potions
-        if(quest.berserk) text += "Berserk mode : " + quest.berserkCountdown + "\n";
-        if(quest.turtle) text += "You're a turtle : " + quest.turtleCountdown + "\n";
-        if(quest.invulnerability) text += "Invincible : " + quest.invulnerabilityCountdown + "\n";
-        if(this.list.health.shown || this.list.escape.shown || this.list.berserk.shown || this.list.majorHealth.shown || this.list.invulnerability.shown || this.list.turtle.shown || this.list.cloning.shown || this.list.superman.shown || this.list.gmooh.shown) text += "Potion countdown : " + quest.potionUseCountdown + "\n";
+        if(quest.berserk) text += "Режим неистовости : " + quest.berserkCountdown + "\n";
+        if(quest.turtle) text += "Ты - черепаха : " + quest.turtleCountdown + "\n";
+        if(quest.invulnerability) text += "Бессмертие : " + quest.invulnerabilityCountdown + "\n";
+        if(this.list.health.shown || this.list.escape.shown || this.list.berserk.shown || this.list.majorHealth.shown || this.list.invulnerability.shown || this.list.turtle.shown || this.list.cloning.shown || this.list.superman.shown || this.list.gmooh.shown) text += "Число зелий : " + quest.potionUseCountdown + "\n";
         
         // Scrolls
-        if(this.list.fireScroll.shown || this.acidRainScroll.shown || this.teleportScroll.shown || this.earthquakeScroll.shown || this.impInvocationScroll.shown) text += "Scroll countdown : " + quest.scrollUseCountdown;
+        if(this.list.fireScroll.shown || this.acidRainScroll.shown || this.teleportScroll.shown || this.earthquakeScroll.shown || this.impInvocationScroll.shown) text += "Число свитков : " + quest.scrollUseCountdown;
         
         return text;
     },
@@ -476,16 +476,16 @@ var potions = {
         
         switch(random.getRandomIntUpTo(3)){
             case 0:
-                quest.begin(false, land.getLandIndexFromName("The peaceful forest"));
+                quest.begin(false, land.getLandIndexFromName("Мирный Лес"));
             break;
             case 1:
-                quest.begin(false, land.getLandIndexFromName("cowLevel"));
+                quest.begin(false, land.getLandIndexFromName("кауЛевел"));
             break;
             case 2:
-                quest.begin(false, land.getLandIndexFromName("sea"));
+                quest.begin(false, land.getLandIndexFromName("море"));
             break;
             case 3:
-                quest.begin(false, land.getLandIndexFromName("desert"));
+                quest.begin(false, land.getLandIndexFromName("пустыня"));
             break;
         }
     }
