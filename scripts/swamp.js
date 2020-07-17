@@ -11,7 +11,7 @@ var swamp = {
         switch(this.step){
             case 4:
                 text = speech.makeSpeechFromText("Здарова, я мистер Лягушка. Я могу тебе дать конфеты, и много других полезных вещей. Я знаю, что ты любишь сладости. Но мне одиноко на болоте. И потому я сыграю с тобой в игру. Если ты ответишь на мои вопросы верно, то вкуснейшие сладости будут твоими!", 29, "");
-                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(5);\">Let's go, then</button>";
+                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(5);\">Продолжить</button>";
             break;
             case 5:
                 text = speech.makeSpeechFromText("Первый вопрос : ТЫ действительно любишь конфеты?", 29, "");
