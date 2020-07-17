@@ -168,7 +168,7 @@ if(potions.list.health.nbrOwned > 0){
     polish : function(){
         if(lollipops.nbrOwned >= 30){
             lollipops.setNbrOwned(lollipops.nbrOwned - 30);
-            this.setName("polished candy diamond sword");
+            this.setName("Алмазный меч с конфетной пылью");
             htmlInteraction.hideButton("polish");
         }
     },
@@ -179,15 +179,15 @@ if(potions.list.health.nbrOwned > 0){
         
         // We possibly show a new product in the shop depending on the new sword name
         switch(this.name){
-            case "wooden sword": shop.showProduct("copper_sword"); break;
-            case "copper sword": shop.showProduct("iron_sword"); break;
-            case "iron sword": shop.showProduct("silver_sword"); break;
-            case "silver sword": shop.showProduct("diamond_sword"); break;
+            case "деревянный меч": shop.showProduct("copper_sword"); break;
+            case "медный меч": shop.showProduct("iron_sword"); break;
+            case "железный меч": shop.showProduct("silver_sword"); break;
+            case "серебряный меч": shop.showProduct("diamond_sword"); break;
             default: shop.showProduct("products_after_swords"); break;
         }
         
         // Other stuff
-        htmlInteraction.setInnerHtml("sword", "You currently have a " + this.name + ".");
+        htmlInteraction.setInnerHtml("sword", "У вас уже  есть" + this.name + ".");
         quest.defineMood();
         htmlInteraction.setElementVisibility("sword", true);
         htmlInteraction.setElementVisibility("quest_form", true);
@@ -200,7 +200,7 @@ if(potions.list.health.nbrOwned > 0){
       .\n\
      / \\\n\
      | |\n\
-     | |  <button class=\"home_button\" id=\"buy_wooden_sword\" onClick=\"sword.buyThisSword(\'wooden sword\');\">Buy the wooden sword (150 candies)</button>\n\
+     | |  <button class=\"home_button\" id=\"buy_wooden_sword\" onClick=\"sword.buyThisSword(\'wooden sword\');\">Купить деревянный меч (150 конфет)</button>\n\
      | |\n\
      | |\n\
    `--8--\'\n\
@@ -222,7 +222,7 @@ if(potions.list.health.nbrOwned > 0){
       .\n\
      /:\\\n\
      |||\n\
-     |||  <button class=\"home_button\" id=\"buy_copper_sword\" onClick=\"sword.buyThisSword(\'copper sword\');\">Buy the copper sword (300 candies)</button>\n\
+     |||  <button class=\"home_button\" id=\"buy_copper_sword\" onClick=\"sword.buyThisSword(\'copper sword\');\">Купить медный меч (300 конфет)</button>\n\
      |||\n\
      |||\n\
    `--8--\'\n\
@@ -244,7 +244,7 @@ if(potions.list.health.nbrOwned > 0){
       /|\n\
      |\\|\n\
      |||\n\
-     |||  <button class=\"home_button\" id=\"buy_iron_sword\" onClick=\"sword.buyThisSword(\'iron sword\');\">Buy the iron sword (500 candies)</button>\n\
+     |||  <button class=\"home_button\" id=\"buy_iron_sword\" onClick=\"sword.buyThisSword(\'iron sword\');\">Купить железный меч (500 конфет)</button>\n\
      |||\n\
      |||\n\
      |||\n\
@@ -272,7 +272,7 @@ if(potions.list.health.nbrOwned > 0){
      |\\\n\
      |/|\n\
      |||\n\
-     [|]  <button class=\"home_button\" id=\"buy_silver_sword\" onClick=\"sword.buyThisSword(\'silver sword\');\">Buy the silver sword (1000 candies)</button>\n\
+     [|]  <button class=\"home_button\" id=\"buy_silver_sword\" onClick=\"sword.buyThisSword(\'silver sword\');\">Купить серебряный меч (1000 конфет)</button>\n\
      |||\n\
      [|]\n\
      |||\n\
@@ -300,7 +300,7 @@ if(potions.list.health.nbrOwned > 0){
       /|\n\
      |;|\n\
      |:|\n\
-     |;|  <button class=\"home_button\" id=\"buy_diamond_sword\" onClick=\"sword.buyThisSword(\'diamond sword\');\">Buy the diamond sword (2000 candies)</button>\n\
+     |;|  <button class=\"home_button\" id=\"buy_diamond_sword\" onClick=\"sword.buyThisSword(\'diamond sword\');\">Купить алмазный меч (2000 конфет)</button>\n\
      |:|\n\
      |;|\n\
      |:|\n\
@@ -311,7 +311,7 @@ if(potions.list.health.nbrOwned > 0){
      |D|\n\
      `0\'",
      
-    asciiDiamondSwordWithoutButton : "Diamond sword\n\n\
+    asciiDiamondSwordWithoutButton : "Алмазный меч\n\n\
       /|\n\
      |;|\n\
      |:|\n\
@@ -326,7 +326,7 @@ if(potions.list.health.nbrOwned > 0){
      |D|\n\
      `0\'",
      
-    asciiCandyDiamondSword : "Candy diamond sword\n\n\
+    asciiCandyDiamondSword : "Конфетный алмазный меч\n\n\
         /|\n\
        |o|\n\
        |:|\n\
@@ -341,7 +341,7 @@ if(potions.list.health.nbrOwned > 0){
        |D|\n\
        'O'",
     
-    asciiPolishedCandyDiamondSword : "Polished candy diamond sword\n\n\
+    asciiPolishedCandyDiamondSword : "Посыпанный пылью алмазный меч\n\n\
             /|\n\
            |o|\n\
            | |\n\
@@ -356,7 +356,7 @@ if(potions.list.health.nbrOwned > 0){
            | |\n\
            'O'",
     
-    asciiChocolateSword : "Chocolate sword\n\n\
+    asciiChocolateSword : "Шоколадный меч\n\n\
        /|\n\
       |o|\n\
       |~|\n\
@@ -371,7 +371,7 @@ if(potions.list.health.nbrOwned > 0){
       |~|\n\
       'O'",
     
-    asciiSharpChocolateSword : "Sharp chocolate sword\n\n\
+    asciiSharpChocolateSword : "Меч с тёртым шоколадом\n\n\
          /|\n\
         |^|\n\
         |~|\n\
@@ -386,7 +386,7 @@ if(potions.list.health.nbrOwned > 0){
         |~|\n\
         'O'",
     
-    asciiSwordOfFlames : "Sword of Flames\n\n\
+    asciiSwordOfFlames : "Пламенный меч\n\n\
        _\n\
       /#|\n\
      |##|\n\
@@ -406,7 +406,7 @@ if(potions.list.health.nbrOwned > 0){
      |``|\n\
      \"##\"",
     
-    asciiSwordOfLife : "Sword of Life\n\n\
+    asciiSwordOfLife : "Меч жизни\n\n\
    _    _\n\
   ( `\\/' )\n\
   `\\    /'\n\
@@ -427,7 +427,7 @@ if(potions.list.health.nbrOwned > 0){
     |  |\n\
     \"OO\"",
     
-    asciiSwordOfSummoning : "Sword of Summoning\n\n\
+    asciiSwordOfSummoning : "Меч призыва\n\n\
        _\n\
       /*|      _\n\
      |% |     / \\\n\
@@ -447,7 +447,7 @@ if(potions.list.health.nbrOwned > 0){
      |*&|\n\
      \'42\'",
      
-    asciiSwordOfLiflamesummoning : "Sword of Liflamesummoning\n\n\
+    asciiSwordOfLiflamesummoning : "Меч Жизни Пламя и Призыва\n\n\
       _    _\n\
      ( `\\/' )\n\
      `\\    /'\n\
@@ -469,7 +469,7 @@ if(potions.list.health.nbrOwned > 0){
        |s%|\n\
        \'42\'",
        
-    asciiSwordOfRandomness : "  Sword of Randomness\n\n\
+    asciiSwordOfRandomness : "  Меч рандома \n\n\
       _    _\n\
  À    ( `\\/' )\n\
     À `\\ e  /'\n\
