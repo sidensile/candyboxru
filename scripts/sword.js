@@ -22,58 +22,58 @@ var sword = {
     buyThisSword : function(name){
         if(this.name != name){ // If we're not trying to buy the current sword
             switch(name){
-                case "Деревянный меч":
+                case "wooden sword":
                     if(candies.nbrOwned >= shop.currentSwordPrice){
                         candies.setNbrOwned(candies.nbrOwned - shop.currentSwordPrice);
-                        shop.setMerchantSpeech("Круто! Этот деревянный меч не самый лучший, конечно, но он и не дорогой.");
+                        shop.setMerchantSpeech("Great! This wooden sword isn't the best, for sure, but it really didn't cost so much.");
                         shop.hideProduct("sword");
                     }
                     else{
-                        shop.setMerchantSpeech("У Вас недостаточно конфет. Пофармите конфет перед покупкой : на данный момент мечи очень нужны.");
+                        shop.setMerchantSpeech("You don't have enough candies. You should save up candies to buy it : swords are useful nowadays.");
                         return;
                     }
                 break;
                 case "copper sword":
                     if(candies.nbrOwned >= shop.currentSwordPrice){
                         candies.setNbrOwned(candies.nbrOwned - shop.currentSwordPrice);
-                        shop.setMerchantSpeech("Этот медный меч довольно тяжелый, но он убивает эффективно.");
+                        shop.setMerchantSpeech("This copper sword is quite heavy, but it slays efficiently.");
                         shop.hideProduct("sword");
                     }
                     else{
-                        shop.setMerchantSpeech("Вам нужно 300 конфет, чтобы купить этот меч! Знаете ли вы, что медь медленно реагирует с атмосферным кислородом, образуя слой коричнево-черного оксида меди?");
+                        shop.setMerchantSpeech("You need 300 candies to buy that sword! Did you know that copper slowly reacts with atmospheric oxygen forming a layer of brown-black copper oxide?");
                         return;
                     }
                 break;
                 case "iron sword":
                     if(candies.nbrOwned >= shop.currentSwordPrice){
                         candies.setNbrOwned(candies.nbrOwned - shop.currentSwordPrice);
-                        shop.setMerchantSpeech("Этот железный меч может разрубить почти все, если ты достаточно силен, чтобы им воспользоваться.");
+                        shop.setMerchantSpeech("This iron sword could cut almost anything, if you're strong enough to use it.");
                         shop.hideProduct("sword");
                     }
                     else{
-                        shop.setMerchantSpeech("Вам нужно больше конфет для железного меча. Железо крепкое. Железо-вещь надежная. Железо подчинится твоему убийственному желанию.");
+                        shop.setMerchantSpeech("You need more candies for the iron sword. Iron is strong. Iron is reliable. Iron will obey your slaying desire.");
                         return;
                     }
                 break;
                 case "silver sword":
                     if(candies.nbrOwned >= shop.currentSwordPrice){
                         candies.setNbrOwned(candies.nbrOwned - shop.currentSwordPrice);
-                        shop.setMerchantSpeech("Тысяча конфет за меняяяяя! Я имею в виду, что этот серебряный меч даже сильнее, чем Железный! Ты должен был купить его.");
+                        shop.setMerchantSpeech("One thousand candies for meeee! Uh, I mean, this silver sword is even stronger than the iron one! You had to buy it.");
                         shop.hideProduct("sword");
                     }
                     else{
-                        shop.setMerchantSpeech("Тысяча конфет за серебряный меч! Моя предельная прибыль не может справиться с меньшим, чем это.");
+                        shop.setMerchantSpeech("One thousand candies for the silver sword! My marginal profit can't handle less than that.");
                         return;
                     }
                 break;
                 case "diamond sword":
                     if(candies.nbrOwned >= shop.currentSwordPrice){
                         candies.setNbrOwned(candies.nbrOwned - shop.currentSwordPrice);
-                        shop.setMerchantSpeech("Алмазный! Это лучший меч, который я могу тебе продать. Он будет резать камни, как будто они сделаны из масла.");
+                        shop.setMerchantSpeech("Diamond! This is the best sword I can sell you. It will cut rocks as if they were made of butter.");
                         shop.hideProduct("sword");
                     }
                     else{
-                        shop.setMerchantSpeech("Тебе нужно больше конфет. Алмазный меч стоит довольно дорого, но он того стоит!");
+                        shop.setMerchantSpeech("You need more candies. The diamond sword is quite expensive, but it's worth it!");
                         return;
                     }
                 break;
@@ -85,7 +85,7 @@ var sword = {
     enchantImpInvocation : function(){
         if(potions.list.impInvocationScroll.nbrOwned > 0){
         this.setSpecialSword(true);
-        this.setName("Меч призыва");
+        this.setName("Sword of Summoning");
         potions.list.impInvocationScroll.nbrOwned -= 1;
         potions.updateOnPage();
         forge.setStep(2);
@@ -127,7 +127,7 @@ var sword = {
     enchantFire : function(){
 if(potions.list.fireScroll.nbrOwned > 0){
         this.setSpecialSword(true);
-        this.setName("Пламенный меч");
+        this.setName("Sword of Flames");
         potions.list.fireScroll.nbrOwned -= 1;
         potions.updateOnPage();
         forge.setStep(2);
@@ -137,7 +137,7 @@ if(potions.list.fireScroll.nbrOwned > 0){
     enchantHealth : function(){
 if(potions.list.health.nbrOwned > 0){
         this.setSpecialSword(true);
-        this.setName("Меч жизни");
+        this.setName("Sword of Life");
         potions.list.health.nbrOwned -= 1;
         potions.updateOnPage();
         forge.setStep(2);
@@ -145,14 +145,14 @@ if(potions.list.health.nbrOwned > 0){
     },
     
     sharpen : function(){
-        this.setName("Меч с плавленым шоколадом");
+        this.setName("sharp chocolate sword");
         forge.setStep(1);
     },
     
     coat : function(){
         if(chocolateBars.nbrOwned >= 1){
             chocolateBars.setNbrOwned(chocolateBars.nbrOwned - 1);
-            this.setName("шоколадный меч");
+            this.setName("chocolate sword");
             htmlInteraction.hideButton("coat");
         }
     },
@@ -160,7 +160,7 @@ if(potions.list.health.nbrOwned > 0){
     encrust : function(){
         if(candies.nbrOwned >= 101){
             candies.setNbrOwned(candies.nbrOwned - 101);
-            this.setName("конфетный меч");
+            this.setName("candy diamond sword");
             htmlInteraction.hideButton("encrust");
         }
     },
@@ -168,7 +168,7 @@ if(potions.list.health.nbrOwned > 0){
     polish : function(){
         if(lollipops.nbrOwned >= 30){
             lollipops.setNbrOwned(lollipops.nbrOwned - 30);
-            this.setName("Алмазный меч с конфетной пылью");
+            this.setName("polished candy diamond sword");
             htmlInteraction.hideButton("polish");
         }
     },
@@ -179,15 +179,15 @@ if(potions.list.health.nbrOwned > 0){
         
         // We possibly show a new product in the shop depending on the new sword name
         switch(this.name){
-            case "деревянный меч": shop.showProduct("copper_sword"); break;
-            case "медный меч": shop.showProduct("iron_sword"); break;
-            case "железный меч": shop.showProduct("silver_sword"); break;
-            case "серебряный меч": shop.showProduct("diamond_sword"); break;
+            case "wooden sword": shop.showProduct("copper_sword"); break;
+            case "copper sword": shop.showProduct("iron_sword"); break;
+            case "iron sword": shop.showProduct("silver_sword"); break;
+            case "silver sword": shop.showProduct("diamond_sword"); break;
             default: shop.showProduct("products_after_swords"); break;
         }
         
         // Other stuff
-        htmlInteraction.setInnerHtml("sword", "У вас уже  есть" + this.name + ".");
+        htmlInteraction.setInnerHtml("sword", "You currently have a " + this.name + ".");
         quest.defineMood();
         htmlInteraction.setElementVisibility("sword", true);
         htmlInteraction.setElementVisibility("quest_form", true);
@@ -200,7 +200,7 @@ if(potions.list.health.nbrOwned > 0){
       .\n\
      / \\\n\
      | |\n\
-     | |  <button class=\"home_button\" id=\"buy_wooden_sword\" onClick=\"sword.buyThisSword(\'wooden sword\');\">Купить деревянный меч (150 конфет)</button>\n\
+     | |  <button class=\"home_button\" id=\"buy_wooden_sword\" onClick=\"sword.buyThisSword(\'wooden sword\');\">Buy the wooden sword (150 candies)</button>\n\
      | |\n\
      | |\n\
    `--8--\'\n\
@@ -222,7 +222,7 @@ if(potions.list.health.nbrOwned > 0){
       .\n\
      /:\\\n\
      |||\n\
-     |||  <button class=\"home_button\" id=\"buy_copper_sword\" onClick=\"sword.buyThisSword(\'copper sword\');\">Купить медный меч (300 конфет)</button>\n\
+     |||  <button class=\"home_button\" id=\"buy_copper_sword\" onClick=\"sword.buyThisSword(\'copper sword\');\">Buy the copper sword (300 candies)</button>\n\
      |||\n\
      |||\n\
    `--8--\'\n\
@@ -244,7 +244,7 @@ if(potions.list.health.nbrOwned > 0){
       /|\n\
      |\\|\n\
      |||\n\
-     |||  <button class=\"home_button\" id=\"buy_iron_sword\" onClick=\"sword.buyThisSword(\'iron sword\');\">Купить железный меч (500 конфет)</button>\n\
+     |||  <button class=\"home_button\" id=\"buy_iron_sword\" onClick=\"sword.buyThisSword(\'iron sword\');\">Buy the iron sword (500 candies)</button>\n\
      |||\n\
      |||\n\
      |||\n\
@@ -272,7 +272,7 @@ if(potions.list.health.nbrOwned > 0){
      |\\\n\
      |/|\n\
      |||\n\
-     [|]  <button class=\"home_button\" id=\"buy_silver_sword\" onClick=\"sword.buyThisSword(\'silver sword\');\">Купить серебряный меч (1000 конфет)</button>\n\
+     [|]  <button class=\"home_button\" id=\"buy_silver_sword\" onClick=\"sword.buyThisSword(\'silver sword\');\">Buy the silver sword (1000 candies)</button>\n\
      |||\n\
      [|]\n\
      |||\n\
@@ -300,7 +300,7 @@ if(potions.list.health.nbrOwned > 0){
       /|\n\
      |;|\n\
      |:|\n\
-     |;|  <button class=\"home_button\" id=\"buy_diamond_sword\" onClick=\"sword.buyThisSword(\'diamond sword\');\">Купить алмазный меч (2000 конфет)</button>\n\
+     |;|  <button class=\"home_button\" id=\"buy_diamond_sword\" onClick=\"sword.buyThisSword(\'diamond sword\');\">Buy the diamond sword (2000 candies)</button>\n\
      |:|\n\
      |;|\n\
      |:|\n\
@@ -311,7 +311,7 @@ if(potions.list.health.nbrOwned > 0){
      |D|\n\
      `0\'",
      
-    asciiDiamondSwordWithoutButton : "Алмазный меч\n\n\
+    asciiDiamondSwordWithoutButton : "Diamond sword\n\n\
       /|\n\
      |;|\n\
      |:|\n\
@@ -326,7 +326,7 @@ if(potions.list.health.nbrOwned > 0){
      |D|\n\
      `0\'",
      
-    asciiCandyDiamondSword : "Конфетный алмазный меч\n\n\
+    asciiCandyDiamondSword : "Candy diamond sword\n\n\
         /|\n\
        |o|\n\
        |:|\n\
@@ -341,7 +341,7 @@ if(potions.list.health.nbrOwned > 0){
        |D|\n\
        'O'",
     
-    asciiPolishedCandyDiamondSword : "Посыпанный пылью алмазный меч\n\n\
+    asciiPolishedCandyDiamondSword : "Polished candy diamond sword\n\n\
             /|\n\
            |o|\n\
            | |\n\
@@ -356,7 +356,7 @@ if(potions.list.health.nbrOwned > 0){
            | |\n\
            'O'",
     
-    asciiChocolateSword : "Шоколадный меч\n\n\
+    asciiChocolateSword : "Chocolate sword\n\n\
        /|\n\
       |o|\n\
       |~|\n\
@@ -371,7 +371,7 @@ if(potions.list.health.nbrOwned > 0){
       |~|\n\
       'O'",
     
-    asciiSharpChocolateSword : "Меч с тёртым шоколадом\n\n\
+    asciiSharpChocolateSword : "Sharp chocolate sword\n\n\
          /|\n\
         |^|\n\
         |~|\n\
@@ -386,7 +386,7 @@ if(potions.list.health.nbrOwned > 0){
         |~|\n\
         'O'",
     
-    asciiSwordOfFlames : "Пламенный меч\n\n\
+    asciiSwordOfFlames : "Sword of Flames\n\n\
        _\n\
       /#|\n\
      |##|\n\
@@ -406,7 +406,7 @@ if(potions.list.health.nbrOwned > 0){
      |``|\n\
      \"##\"",
     
-    asciiSwordOfLife : "Меч жизни\n\n\
+    asciiSwordOfLife : "Sword of Life\n\n\
    _    _\n\
   ( `\\/' )\n\
   `\\    /'\n\
@@ -427,7 +427,7 @@ if(potions.list.health.nbrOwned > 0){
     |  |\n\
     \"OO\"",
     
-    asciiSwordOfSummoning : "Меч призыва\n\n\
+    asciiSwordOfSummoning : "Sword of Summoning\n\n\
        _\n\
       /*|      _\n\
      |% |     / \\\n\
@@ -447,7 +447,7 @@ if(potions.list.health.nbrOwned > 0){
      |*&|\n\
      \'42\'",
      
-    asciiSwordOfLiflamesummoning : "Меч Жизни Пламя и Призыва\n\n\
+    asciiSwordOfLiflamesummoning : "Sword of Liflamesummoning\n\n\
       _    _\n\
      ( `\\/' )\n\
      `\\    /'\n\
@@ -469,7 +469,7 @@ if(potions.list.health.nbrOwned > 0){
        |s%|\n\
        \'42\'",
        
-    asciiSwordOfRandomness : "  Меч рандома \n\n\
+    asciiSwordOfRandomness : "  Sword of Randomness\n\n\
       _    _\n\
  À    ( `\\/' )\n\
     À `\\ e  /'\n\
