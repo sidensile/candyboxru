@@ -476,16 +476,16 @@ var potions = {
         
         switch(random.getRandomIntUpTo(3)){
             case 0:
-                quest.begin(false, land.getLandIndexFromName("Мирный Лес"));
+                quest.begin(false, land.getLandIndexFromName("Peaceful Forest"));
             break;
             case 1:
-                quest.begin(false, land.getLandIndexFromName("кауЛевел"));
+                quest.begin(false, land.getLandIndexFromName("cowlevel"));
             break;
             case 2:
-                quest.begin(false, land.getLandIndexFromName("море"));
+                quest.begin(false, land.getLandIndexFromName("sea"));
             break;
             case 3:
-                quest.begin(false, land.getLandIndexFromName("пустыня"));
+                quest.begin(false, land.getLandIndexFromName("desert"));
             break;
         }
     }

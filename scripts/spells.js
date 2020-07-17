@@ -70,7 +70,7 @@ var spells = {
         if(nbr > 300000) nbr = 300000;
         
         candies.setNbrOwned(candies.nbrOwned + nbr);
-        hut.setSpeech("Вот " + nbr + " конфетки для тебя !");
+        hut.setSpeech("Вот " + nbr + " конфет для тебя !");
     },
     
     nextFasterCandiesFiboStep : function(){
